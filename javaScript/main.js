@@ -153,11 +153,11 @@ window.addEventListener("DOMContentLoaded", function () {
           </span>
           <div class="section2__Div_Btns">
             <span>
-              <button class="btn_inc">
+              <button class="btn_dec" onclick="decreaseQuantity(${item.id})">
                 <i class="fa-solid fa-minus"></i>
               </button>
               <p>1</p>
-              <button class="btn_dec">
+              <button class="btn_inc" onclick="increaseQuantity(${item.id})">
                 <i class="fa-solid fa-plus"></i>
               </button>
             </span>
@@ -189,62 +189,94 @@ const sec3List = document.querySelector(".sec3__list");
 function ChiqarSevimli() {
   if (SelectedArray.length === 0) {
     sec3List.textContent = "Hozircha hech qanday ma'lumot yo'q";
+    sec3P1.innerHTML = ""; // Yangilangan qism
   } else {
     let localData = SelectedArray.map((item) => {
       return `
-          <li class="sec3__item">
-            <div class="sec3__itemLeft">
-              <img src="${item.images}.png" alt="${item.title}" />
-              <div class="sec3__itemBtnDiv">
-                <p>${item.title}</p>
-                <div class="sec3__itemBtn">
-                  <span>
-                    <button class="btn_dec" onclick="decreaseQuantity(${item.id})">
-                      <i class="fa-solid fa-minus"></i>
-                    </button>
-                    <p>${item.quantity}</p>
-                    <button class="btn_inc" onclick="increaseQuantity(${item.id})">
-                      <i class="fa-solid fa-plus"></i>
-                    </button>
-                  </span>
-                  <button class="removeBtn" onclick="removeBtn(${item.id})">
-                    <i class="fa-regular fa-trash-can"></i> remove
+        <li class="sec3__item">
+          <div class="sec3__itemLeft">
+            <img src="${item.images}.png" alt="${item.title}" />
+            <div class="sec3__itemBtnDiv">
+              <p>${item.title}</p>
+              <div class="sec3__itemBtn">
+                <span>
+                  <button class="btn_dec" onclick="decreaseQuantity(${item.id})">
+                    <i class="fa-solid fa-minus"></i>
                   </button>
-                </div>
+                  <p>${item.quantity}</p>
+                  <button class="btn_inc" onclick="increaseQuantity(${item.id})">
+                    <i class="fa-solid fa-plus"></i>
+                  </button>
+                </span>
+                <button class="removeBtn" onclick="removeBtn(${item.id})">
+                  <i class="fa-regular fa-trash-can"></i> remove
+                </button>
               </div>
             </div>
-            <div class="sec3__itemPrice">
-              <span>
-                <p>R$</p>
-                <h4>${item.price}</h4>
-              </span>
-            </div>
-          </li>
-          <svg xmlns="http://www.w3.org/2000/svg" width="368" height="2" viewBox="0 0 368 2" fill="none">
-            <path d="M0 1H368" stroke="#E6E5E5" />
-          </svg>
-        `;
+          </div>
+          <div class="sec3__itemPrice">
+            <span>
+              <p>R$</p>
+              <h4>${item.price}0</h4>
+            </span>
+          </div>
+        </li>
+        <svg xmlns="http://www.w3.org/2000/svg" width="368" height="2" viewBox="0 0 368 2" fill="none">
+          <path d="M0 1H368" stroke="#E6E5E5" />
+        </svg>
+      `;
     }).join("");
 
     sec3List.innerHTML = localData;
+    if (SelectedArray.length >= 10) {
+      korzinkaTotal.innerHTML = `9+`;
+
+    } else if (SelectedArray.length >= 0) {
+      korzinkaTotal.classList.add("show");
+      korzinkaTotal.classList.remove("hide");
+      korzinkaTotal.innerHTML = `${SelectedArray.length}`;
+    }
+
+    const totalPrice = SelectedArray.reduce((acc, item) => {
+      return acc + item.price * item.quantity;
+    }, 0);
+    sec3P1.innerHTML = `R$ ${totalPrice}`; // Yangilangan qism
+    if (totalPrice > 100) {
+      sec3__totalRight.innerHTML = `R$ ${totalPrice + 5.0}`;
+      sec3__deliver.innerHTML = `R$ 5.0`;
+    } else {
+      sec3__totalRight.innerHTML = `R$ ${totalPrice + 3.5}`;
+      sec3__deliver.innerHTML = `R$ 3.50`;
+    }
   }
 }
-
+const korzinkaTotal = document.querySelector(".korzinkaTotal");
+let sec3__deliver = document.querySelector("#sec3__deliver");
+let sec3__totalRight = document.querySelector("#sec3__totalRight");
 function increaseQuantity(id) {
   SelectedArray = SelectedArray.map((item) => {
     if (item.id === id) {
-      return { ...item, quantity: item.quantity + 1 };
+      const updatedItem = { ...item, quantity: item.quantity + 1 };
+      sec3P1.innerHTML = `<p id="sec3__p2">R$ ${
+        updatedItem.quantity * updatedItem.price
+      }</p>`; // Yangilangan qism
+      return updatedItem;
     }
     return item;
   });
 
   ChiqarSevimli();
 }
+
+// ...Qolgan kodlar
+
 let sec3P1 = document.querySelector("#sec3__p2");
 function decreaseQuantity(id) {
   SelectedArray = SelectedArray.map((item) => {
     if (item.id === id && item.quantity > 1) {
-      return { ...item, quantity: item.quantity - 1 };
+      const updatedItem = { ...item, quantity: item.quantity - 1 };
+      sec3P1.innerHTML = `${updatedItem.quantity * updatedItem.price}`;
+      return updatedItem;
     }
     return item;
   });
