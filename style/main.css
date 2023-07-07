@@ -317,7 +317,8 @@ main {
 }
 .sec3__list {
   width: 100%;
-  border: 1px solid;
+  max-height: 200px;
+  overflow-x: hidden;
   padding: 0;
 }
 .sec3__item {
@@ -325,6 +326,7 @@ main {
   height: 80px;
   padding: 8px 2px;
   display: flex;
+  margin: 15px 0;
 }
 .sec3__itemLeft {
   width: 255px;
@@ -392,4 +394,50 @@ main {
   font-style: normal;
   font-weight: 700;
   line-height: 130%;
+}
+
+::-webkit-scrollbar {
+  width: 1px;
+}
+.sec3__SelectedPrice {
+  width: 100%;
+  border: 1px solid red;
+}
+
+.sec3__topPrice {
+  width: 100%;
+  display: flex;
+  height: 30px;
+  align-items: center;
+  margin-top: 15px;
+}
+#sec3__p1 {
+  margin-left: 0;
+}
+#sec3__p2 {
+  margin-right: 0;
+}
+
+.sec3__deliverPrice {
+  width: 100%;
+  height: 30px;
+  display: flex;
+  margin-top: 15px;
+  align-items: center;
+}
+#sec3__deliver {
+  margin-right: 0;
+}
+.sec3__totalPrice {
+  width: 100%;
+  height: 30px;
+  margin-top: 15px;
+  display: flex;
+  align-items: center;
+}
+#sec3__totalLeft {
+  margin-left: 0;
+}
+#sec3__totalRight {
+  margin-right: 0;
 }
