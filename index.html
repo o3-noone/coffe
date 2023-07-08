@@ -31,12 +31,13 @@
                 </button>
               </div>
               <div class="headerRight__btn">
-                <button>
+                <button class="openKorzinkaDiv">
                   <i
                     class="fa-solid fa-cart-shopping"
                     style="color: #c47f17"
+                    style="color: rgba(255, 255, 255, 0.785)"
                   ></i>
-                  <p class="korzinkaTotal hide">0</p>
+                  <p class="korzinkaTotal">0</p>
                 </button>
               </div>
             </li>
@@ -126,10 +127,88 @@
           </div>
         </div>
       </div>
-      <div class="section3">
+      <div class="section3 hide">
         <div class="container">
           <div class="section3__Div">
-            <div class="section3__left"></div>
+            <div class="section3__left">
+              <h4 class="sec3__h4">Complete seu pedido</h4>
+              <div class="sec3__LeftDiv">
+                <div class="coffe__Card">
+                  <div class="coffe__cardLocal">
+                    <div class="coffe__cardImg">
+                      <i class="fa-solid fa-location-dot"></i>
+                    </div>
+                    <div class="coffe__cardText">
+                      <h4>Endereço de Entrega</h4>
+                      <p>Informe o endereço onde deseja receber seu pedido</p>
+                    </div>
+                  </div>
+                  <div class="coffe__cardInput">
+                    <div class="cardInput__number">
+                      <input type="number" placeholder="90250-440" />
+                    </div>
+                    <div class="cardInput__name">
+                      <input
+                        type="text"
+                        placeholder="Rua João Daniel Martinelli"
+                      />
+                    </div>
+                    <div class="cardInputNumTex">
+                      <input
+                        id="cardInputNum"
+                        placeholder="102"
+                        type="number"
+                      />
+                      <input
+                        id="cardInputText"
+                        type="text"
+                        placeholder="Complemento"
+                      />
+                    </div>
+                    <div class="cardInputButton">
+                      <input
+                        type="text"
+                        id="cardInputNum"
+                        placeholder="Farrapos"
+                      />
+                      <input
+                        type="text"
+                        id="cardInput2"
+                        placeholder="Porto Alegre"
+                      />
+                      <input type="text" id="cardInput3" placeholder="RS" />
+                    </div>
+                  </div>
+                </div>
+                <div class="coffe__CardPayment">
+                  <div class="coffe__cardLocal">
+                    <div class="coffe__cardImg">
+                      <i class="fa-solid fa-dollar-sign"></i>
+                    </div>
+                    <div class="coffe__cardText">
+                      <h4>Pagamento</h4>
+                      <p>
+                        O pagamento é feito na entrega. Escolha a forma que
+                        deseja pagar
+                      </p>
+                    </div>
+                  </div>
+                  <div class="card__BtnPay">
+                    <button>
+                      <i class="fa-solid fa-money-check-dollar"></i> Cartão de
+                      crédito
+                    </button>
+                    <button>
+                      <i class="fa-solid fa-building-columns"></i>cartão de
+                      débito
+                    </button>
+                    <button>
+                      <i class="fa-solid fa-money-bill"></i>dinheiro
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
             <div class="section3__right">
               <h4 class="sec3__h4">Cafés selecionados</h4>
               <div class="section3__rightDiv">
@@ -188,6 +267,51 @@
                   <button class="confirmBtn">confirmar pedido</button>
                 </div>
               </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="section4 hide">
+        <div class="container">
+          <div class="sec4__Top">
+            <h3>Uhu! Pedido confirmado</h3>
+            <p>Agora é só aguardar que logo o café chegará até você</p>
+          </div>
+          <div class="sec4__Bottom">
+            <div class="sec4__orderInfo">
+              <div class="deliver__info">
+                <div class="deliver__infoImg">
+                  <i class="fa-solid fa-location-dot"></i>
+                </div>
+                <div class="deliver__infoText">
+                  <span
+                    >Entrega em
+                    <h4>Rua João Daniel Martinelli, 102</h4>
+                  </span>
+                  <p>Farrapos - Porto Alegre, RS</p>
+                </div>
+              </div>
+              <div class="deliver__info2">
+                <div class="deliver__infoImg">
+                  <i class="fa-solid fa-clock"></i>
+                </div>
+                <div class="deliver__infoText">
+                  <p>Previsão de entrega</p>
+                  <h4>20 min - 30 min</h4>
+                </div>
+              </div>
+              <div class="deliver__info3">
+                <div class="deliver__infoImg">
+                  <i class="fa-solid fa-dollar-sign"></i>
+                </div>
+                <div class="deliver__infoText">
+                  <p>Pagamento na entrega</p>
+                  <h4>Cartão de Crédito</h4>
+                </div>
+              </div>
+            </div>
+            <div class="sec4__orderImages">
+              <img src="/images/deliver.png" alt="deliver" />
             </div>
           </div>
         </div>

@@ -230,10 +230,7 @@ function ChiqarSevimli() {
     sec3List.innerHTML = localData;
     if (SelectedArray.length >= 10) {
       korzinkaTotal.innerHTML = `9+`;
-
-    } else if (SelectedArray.length >= 0) {
-      korzinkaTotal.classList.add("show");
-      korzinkaTotal.classList.remove("hide");
+    } else {
       korzinkaTotal.innerHTML = `${SelectedArray.length}`;
     }
 
@@ -283,3 +280,49 @@ function decreaseQuantity(id) {
 
   ChiqarSevimli();
 }
+const section3 = document.querySelector(".section3");
+const section4 = document.querySelector(".section4");
+const section1 = document.querySelector(".section1");
+const section2 = document.querySelector(".section2");
+const openKorzinkaDiv = document.querySelector(".openKorzinkaDiv");
+openKorzinkaDiv.addEventListener("click", function () {
+  if (section3.classList.contains("show")) {
+    section1.classList.add("show");
+    section1.classList.remove("hide");
+    section2.classList.add("show");
+    section2.classList.remove("hide");
+    section3.classList.add("hide");
+    section3.classList.remove("show");
+    section4.classList.add("hide");
+    section4.classList.remove("show");
+  } else {
+    section1.classList.add("hide");
+    section1.classList.remove("show");
+    section2.classList.add("hide");
+    section2.classList.remove("show");
+    section3.classList.add("show");
+    section3.classList.remove("hide");
+    section4.classList.add("hide");
+    section4.classList.remove("show");
+  }
+});
+// const header = document.querySelector("header");
+// window.addEventListener("scroll", function () {
+//   if (window.pageYOffset > 100) {
+//     header.style.position = "fixed";
+//     header.style.marginTop = "-100px";
+//     section1.style.marginTop = "100px";
+//     header.style.backgroundColor = "rgba(255, 255, 255, 0.800";
+//   } else {
+//     header.style.position = "";
+//     section1.style.marginTop = "0";
+//     header.style.marginTop = "";
+//   }
+// });
+const confirmBtn = document.querySelector(".confirmBtn");
+confirmBtn.addEventListener("click", function () {
+  section4.classList.remove("hide");
+  section4.classList.add("show");
+  section3.classList.remove("show");
+  section3.classList.add("hide");
+});

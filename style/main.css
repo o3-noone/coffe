@@ -20,9 +20,6 @@ button {
 }
 .show {
   display: block;
-  display: flex;
-  align-items: center;
-  justify-content: center;
 }
 .hide {
   display: none;
@@ -30,7 +27,6 @@ button {
 .container {
   padding: 0 10%;
   max-width: 1440px;
-  border: 1px solid rgb(86, 194, 86);
 }
 header {
   width: 100%;
@@ -69,7 +65,8 @@ header {
   border-radius: 6px;
   background: var(--brand-purple-light, #ebe5f9);
   color: var(--brand-purple-dark, #4b2995);
-  font-family: Roboto;
+  font-family: "Roboto", sans-serif;
+
   font-size: 14px;
   font-style: normal;
   font-weight: 400;
@@ -94,6 +91,9 @@ header {
   border-radius: 50%;
   background: var(--brand-yellow-dark, #c47f17);
   color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 main {
@@ -108,7 +108,7 @@ main {
 }
 .section1__List {
   width: 100%;
-  height: 544px;
+  min-height: 544px;
   padding: 0;
   display: flex;
 }
@@ -119,14 +119,18 @@ main {
   margin-left: 0;
 }
 .section1__item2 {
-  width: 500px;
+  max-width: 500px;
   height: 100%;
   display: flex;
   align-items: center;
 }
+.section1__item2 > img {
+  max-width: 500px;
+  max-height: 400px;
+}
 .section1__top {
   width: 100%;
-  height: 190px;
+  min-height: 190px;
   margin-top: 94px;
 }
 .section1__top > h3 {
@@ -173,7 +177,7 @@ main {
 }
 
 .section1__bottom_item2 {
-  width: 294px;
+  max-width: 294px;
   height: 35px;
   display: flex;
   align-items: center;
@@ -189,6 +193,7 @@ main {
 }
 .section2 {
   width: 100%;
+  margin-top: 50px;
 }
 
 .section2__Div {
@@ -249,6 +254,7 @@ main {
   font-style: normal;
   font-weight: 400;
   line-height: 130%;
+  padding: 0 10px;
 }
 .section2__Div_price {
   width: 208px;
@@ -266,7 +272,8 @@ main {
 .section2__Span_left > p {
   color: var(--base-text, #574f4d);
   text-align: left;
-  font-family: Roboto;
+  font-family: "Roboto", sans-serif;
+
   font-size: 14px;
   font-style: normal;
   font-weight: 400;
@@ -275,7 +282,8 @@ main {
 .section2__Span_left > h4 {
   color: black;
   text-align: left;
-  font-family: Roboto;
+  font-family: "Roboto", sans-serif;
+
   font-size: 22px;
   font-style: normal;
   font-weight: 500;
@@ -301,6 +309,8 @@ main {
   font-style: normal;
   font-weight: 700;
   line-height: 130%;
+  width: 50%;
+  margin-left: 0;
 }
 .btn_inc {
   border: none;
@@ -329,7 +339,8 @@ main {
   background: #f1e9c9;
   color: var(--brand-yellow-dark, #c47f17);
   /* Components/Tag */
-  font-family: Roboto;
+  font-family: "Roboto", sans-serif;
+
   font-size: 10px;
   font-style: normal;
   font-weight: 700;
@@ -339,13 +350,18 @@ main {
 }
 .section3 {
   width: 100%;
-  height: 920px;
+  min-height: 700px;
+  margin-top: 30px;
 }
 .section3__Div {
   width: 100%;
+  min-height: 650px;
+  display: flex;
 }
+
 .section3__right {
-  width: 450px;
+  width: 50%;
+  margin-right: 0;
 }
 
 .section3__rightDiv {
@@ -363,7 +379,8 @@ main {
   padding: 0;
 }
 .sec3__item {
-  width: 368px;
+  /* width: 368px; */
+  width: 100%;
   height: 80px;
   padding: 8px 2px;
   display: flex;
@@ -405,7 +422,8 @@ main {
   border-radius: 6px;
   padding: 10px;
   color: var(--base-text, #574f4d);
-  font-family: Roboto;
+  font-family: "Roboto", sans-serif;
+
   font-size: 12px;
   font-style: normal;
   font-weight: 400;
@@ -430,7 +448,8 @@ main {
   color: var(--base-text, #574f4d);
   text-align: right;
   /* Text/Bold M */
-  font-family: Roboto;
+  font-family: "Roboto", sans-serif;
+
   font-size: 16px;
   font-style: normal;
   font-weight: 700;
@@ -484,7 +503,8 @@ main {
   border-radius: 6px;
   background: var(--brand-yellow, #dbac2c);
   color: var(--base-white, #fff);
-  font-family: Roboto;
+  font-family: "Roboto", sans-serif;
+
   font-size: 14px;
   font-style: normal;
   font-weight: 700;
@@ -493,4 +513,329 @@ main {
   border: none;
   outline: none;
   margin-top: 35px;
+}
+.section3__left {
+  margin-left: 0;
+  width: 50%;
+}
+.sec3__LeftDiv {
+  width: 100%;
+  min-height: 610px;
+}
+.coffe__Card {
+  width: 100%;
+  height: 380px;
+  margin-top: 20px;
+  padding: 40px;
+  border-radius: 6px;
+  background: var(--base-card, #f3f2f2);
+}
+.coffe__cardLocal {
+  width: 100%;
+  height: 44px;
+  display: flex;
+}
+.coffe__cardImg {
+  margin-left: 0;
+  width: 5%;
+}
+.coffe__cardText {
+  width: 95%;
+}
+.coffe__cardText > h4 {
+  width: 100%;
+  color: var(--base-subtitle, #403937);
+  font-family: "Roboto", sans-serif;
+
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 130%;
+}
+.coffe__cardText > p {
+  width: 100%;
+  color: var(--base-text, #574f4d);
+  font-family: "Roboto", sans-serif;
+
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 130%;
+}
+.cardInput__number {
+  width: 100%;
+  height: 216px;
+  margin-top: 30px;
+}
+.cardInput__number {
+  width: 100%;
+  height: 42px;
+}
+.cardInput__number > input {
+  width: 200px;
+  height: 100%;
+  padding: 12px;
+  font-size: 17px;
+  outline: none;
+  border-radius: 4px;
+  border: 1px solid var(--base-button, #e6e5e5);
+  background: var(--base-input, #ededed);
+}
+.cardInput__name {
+  width: 100%;
+  height: 42px;
+  margin-top: 16px;
+}
+.cardInput__name > input {
+  width: 100%;
+  height: 100%;
+  padding: 12px;
+  font-size: 18px;
+  border-radius: 4px;
+  border: 1px solid var(--base-button, #e6e5e5);
+  background: var(--base-input, #ededed);
+  outline: none;
+}
+.cardInputNumTex {
+  width: 100%;
+  height: 42px;
+  margin-top: 16px;
+  display: flex;
+}
+#cardInputNum {
+  border-radius: 4px;
+  border: 1px solid var(--base-button, #e6e5e5);
+  background: var(--base-input, #ededed);
+  width: 40%;
+  height: 100%;
+  padding: 12px;
+  margin-left: 0;
+  outline: none;
+  font-size: 18px;
+}
+#cardInputText {
+  width: 60%;
+  height: 100%;
+  padding: 12px;
+  border-radius: 4px;
+  border: 1px solid var(--base-button, #e6e5e5);
+  background: var(--base-input, #ededed);
+  margin-right: 0;
+  outline: none;
+  font-size: 18px;
+}
+.cardInputButton {
+  margin-top: 16px;
+  width: 100%;
+  height: 42px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+#cardInput2 {
+  width: 50%;
+  height: 100%;
+  border-radius: 4px;
+  border: 1px solid var(--base-button, #e6e5e5);
+  background: var(--base-input, #ededed);
+  outline: none;
+  font-size: 18px;
+
+  padding: 12px;
+}
+#cardInput3 {
+  width: 10%;
+  height: 100%;
+  border-radius: 4px;
+  border: 1px solid var(--base-button, #e6e5e5);
+  background: var(--base-input, #ededed);
+  outline: none;
+  font-size: 18px;
+  margin-right: 0;
+  padding: 8px;
+}
+.coffe__CardPayment {
+  width: 100%;
+  min-height: 250px;
+  padding: 40px;
+  border-radius: 6px;
+  background: var(--base-card, #f3f2f2);
+  margin-top: 12px;
+}
+.card__BtnPay {
+  margin-top: 32px;
+  width: 100%;
+  height: 42px;
+  display: flex;
+  flex-wrap: wrap;
+}
+.card__BtnPay > button {
+  width: 178.6px;
+  height: 100%;
+  border-radius: 4px;
+  border: 1px solid var(--base-button, #e6e5e5);
+  background: var(--base-input, #ededed);
+  outline: none;
+  display: flex;
+  align-items: center;
+  padding: 12px;
+  justify-content: center;
+  margin-left: 0;
+}
+.section4 {
+  width: 100%;
+  min-height: 500px;
+}
+.sec4__Top {
+  width: 100%;
+  height: 120px;
+  margin-top: 40px;
+}
+.sec4__Top > h3 {
+  color: var(--brand-yellow-dark, #c47f17);
+  font-family: Baloo 2, cursive;
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 800;
+  line-height: 130%;
+}
+.sec4__Top > p {
+  color: var(--base-subtitle, #403937);
+  font-family: Roboto;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 130%;
+}
+.sec4__Bottom {
+  width: 100%;
+  min-height: 300px;
+  display: flex;
+  align-items: center;
+}
+
+.sec4__orderInfo {
+  width: 526px;
+  padding: 40px;
+  height: 270px;
+  border: 1px solid rgb(73, 73, 167);
+  border-radius: 6px 50px 6px 50px;
+  margin-left: 0;
+}
+.deliver__info {
+  width: 100%;
+  height: 42px;
+  display: flex;
+  align-items: center;
+}
+.deliver__info2 {
+  width: 100%;
+  height: 42px;
+  display: flex;
+  align-items: center;
+  margin-top: 32px;
+}
+.deliver__info2 > .deliver__infoImg {
+  background-color: #dbac2c;
+}
+.deliver__info3 {
+  width: 100%;
+  height: 42px;
+  display: flex;
+  align-items: center;
+  margin-top: 32px;
+}
+.deliver__info3 > .deliver__infoImg {
+  background-color: #c47f17;
+}
+.deliver__infoImg {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 0;
+  color: white;
+  background-color: #4b2995;
+}
+.deliver__infoImg > i {
+  font-size: 12px;
+}
+.deliver__infoText {
+  width: 390px;
+  height: 42px;
+}
+.deliver__infoText > span {
+  display: flex;
+}
+.deliver__infoText > span > h4 {
+  margin-left: 5px;
+}
+.sec4__orderImages {
+  width: 50%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  margin-right: 0;
+}
+@media only screen and (max-width: 1360px) {
+  .sec3__LeftDiv {
+    width: 90%;
+    margin-left: 0;
+  }
+  .sec4__orderImages > img {
+    width: 100%;
+  }
+}
+@media only screen and (max-width: 1044px) {
+  .section1__item2 > img {
+    width: 400px;
+  }
+}
+@media only screen and (max-width: 980px) {
+  .section3__Div {
+    flex-direction: column-reverse;
+  }
+  .section3__right {
+    width: 100%;
+  }
+  .section3__left {
+    width: 100%;
+    margin-top: 50px;
+  }
+  .sec3__LeftDiv {
+    width: 100%;
+  }
+  .sec4__Bottom {
+    flex-direction: column;
+  }
+  .sec4__orderInfo {
+    width: 100%;
+  }
+  .sec4__orderImages {
+    width: 100%;
+    margin-right: none;
+  }
+  .section1__List {
+    flex-direction: column;
+  }
+  .section1__item1 {
+    width: 100%;
+  }
+  .section1__item2 {
+    width: 100%;
+  }
+  .section1__item2 > img {
+    width: 100%;
+  }
+  .section1__bottom_list {
+    width: 100%;
+  }
+  .section1__bottom_item1 {
+    width: 50%;
+  }
+  .section1__bottom_item2 {
+    width: 50%;
+  }
 }
